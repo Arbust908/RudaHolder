@@ -1,23 +1,37 @@
+@font-face {
+  font-family: 'RudoFont';
+  src:  url('Rudo-Bold.otf') format('otf'),
+        url('Rudo-Bold.ttf') format('ttf');
+}
+
 body{
   margin: 0;
 }
 
 
 main{
-
-  position: absolute;
+  font-family: 'RudoFont' , sans-serif;
+  /* Aca se lo saco... estaba al pedo position: absolute; */
   width: 100%;
   height: 100vh;
-
+  /* Display flex es la nueva mecca. */
+  /* Tiene comportamiento estandar raro pero nos permite un posisionamiento muy facil y bueno con pocas lineas. Y no mas positions y margenes raros y eso :D */
+  display: flex;
+  justify-content: center; /* Esto centra en el eje horizontal */
+  align-items: center;     /* Esto en el eje vertical */
 }
-main>img{
-
+/* Haciendo el .bg hijo directo del main lo podemos hacer del mismo tamaño */
+main>.bg{
   width: inherit;
   height: inherit;
   object-fit: cover;
-
- }
- /*
+  /* Si le metemos el z-index asi nos aseguramos que quede de fondo */
+  z-index: -1;
+  /* Al ponerle position: absolute nos aseguramos que queda todo el resto arriba sin mucho quilombo */
+  position: absolute;
+}
+/*
+Lo sacamos, no nos sirve demasiado :P
 #bg {
   position:fixed;
   top:0px;
@@ -31,11 +45,30 @@ main>img{
   top:30%;
   left:35%;
 }
-#links {
-  margin:20px;
-  float:right;
-}
-#snl {
-  margin: 15px;
-}
 */
+/* El logo queda centrado siempre gracias al diplay flex. Dios nos quiere */
+.logo{
+  width: 80%;
+  /* Aca hago 2 cosas. 
+  1_ pongo un ancho en % asi se va resizeando con los distintos dispositivos. 
+  2_ al ponerle un max-width se va a quedar cuando el 80%  sea mas gande. De esa manera en una tele 4k el logo no toma mucho espacio*/
+  max-width: 400px;
+}
+/* Cambio los # por . asi se adapta a que usamos classes para dar estilo */
+.links {
+  /* Que el elemento padre de los iconos sea position absolute nos va a hacer que el Flex no lo joda y nos aseguramos que siempre este en donde queremos */
+  position: absolute;
+  margin: 20px;
+  /* Pancho Tip: si usamos el numero 0 no hace falta ponerle unidad :D */
+  top: 0;
+  right: 0;
+  /* Float en un mundo con Flex es medio mala palabra. Si sirve para poner imagenes y textos una al lado del otro u otras cosas asi. Para posisionar no mas, Gracias! */
+  /* float:right; */
+}
+.snl {
+  margin: 10px;
+  width: 32px;
+}
+
+
+/* fffc92 Amarillo */

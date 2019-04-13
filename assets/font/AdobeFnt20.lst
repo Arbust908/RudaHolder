@@ -1,0 +1,51 @@
+%!Adobe-FontList 1.20
+%Locale:0x80a
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Rudo-Bold
+FamilyName:Rudo
+StyleName:Bold
+FullName:Rudo Bold
+MenuName:Rudo
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\xampp\htdocs\Codex\pb-Rudo\assets\Font\Rudo-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:22104
+FileModTime:1555194039
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Rudo Bold
+NameArray:0,Win,1,Rudo
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Rudo-Bold
+FamilyName:Rudo
+StyleName:Bold
+FullName:Rudo Bold
+MenuName:Rudo
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\xampp\htdocs\Codex\pb-Rudo\assets\Font\Rudo-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:68228
+FileModTime:1555194039
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Rudo Bold
+NameArray:0,Win,1,Rudo
+%EndFont
+

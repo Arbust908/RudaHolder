@@ -49,8 +49,8 @@ Lo sacamos, no nos sirve demasiado :P
 /* El logo queda centrado siempre gracias al diplay flex. Dios nos quiere */
 .logo{
   width: 80%;
-  /* Aca hago 2 cosas. 
-  1_ pongo un ancho en % asi se va resizeando con los distintos dispositivos. 
+  /* Aca hago 2 cosas.
+  1_ pongo un ancho en % asi se va resizeando con los distintos dispositivos.
   2_ al ponerle un max-width se va a quedar cuando el 80%  sea mas gande. De esa manera en una tele 4k el logo no toma mucho espacio*/
   max-width: 400px;
 }

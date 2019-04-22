@@ -23,21 +23,23 @@
   </div>
   <h2 class="coming">New web coming</h2>
   <h2 class="check">Check it</h2>
-  <video src=""></video>
+  <video></video>
   </main>
 </body>
 <script defer>
 window.onload = () => {
   const main = document.querySelector('main');
-  // let video = document.createElement('video');
+  let fuente = document.createElement('source');
   let video = document.querySelector('video');
   let imagen = document.querySelector('img.bg');
   // console.log(main);
-  video.src = 'assets/RUDO_EDIT_20_seg.mp4';
+  fuente.src = './assets/RUDO_EDIT_20_seg.mp4';
+  fuente.type = 'video/mp4';
   video.setAttribute('autoplay',true);
   video.setAttribute('loop',true);
   video.setAttribute('mute',true);
   video.classList.add('bg');
+  video.appendChild(fuente);
   main.appendChild(video);
   imagen.style = 'transition:.3s;opacity:0';
 }

@@ -11,18 +11,36 @@
   <main>
 <!-- No vamos a usar id para dar estilos. Sino class -->
   <img src='assets/rudo_placeholder.jpg' alt="" class="bg">
-  <img src="assets/logo.png" alt="" class="logo">
+  <img src="assets/svgs/Ra_Logo_Rudo.svg" alt="" class="logo">
   <div class="links">
     <!-- Acomodo los alt y class asi quedan en fila... becuase OCD -->
-    <img src="assets/Instagram.png" alt="logo de red social" class="snl">
-    <img src="assets/Facebook.png"  alt="logo de red social" class="snl">
-    <img src="assets/Vemeo.png"     alt="logo de red social" class="snl">
-    <img src="assets/Behance.png"   alt="logo de red social" class="snl">
+    <!-- Vamos a usar svgs por que cargan mas rapido por ser vectores -->
+    <a href="" class="social-btn" ><img src="assets/svgs/Ra_Instagram.svg" alt="logo de red social" class="snl"><h2 class="ig">IG</h2></a>
+    <a href="" class="social-btn" ><img src="assets/svgs/Ra_Facebook.svg"  alt="logo de red social" class="snl"><h2 class="fb">FB</h2></a>
+    <a href="" class="social-btn" ><img src="assets/svgs/Ra_Vimeo.svg"     alt="logo de red social" class="snl"><h2 class="vimeo">Vimeo</h2></a>
+    <a href="" class="social-btn" ><img src="assets/svgs/Ra_Behance.svg"   alt="logo de red social" class="snl"><h2 class="behance">Behance</h2></a>
   </div>
-
+  <h2 class="coming">New web coming</h2>
+  <h2 class="check">Check it</h2>
+  <!-- <div class='dot'></div> -->
+  <video src=""></video>
   </main>
 </body>
-<script>
-
+<script defer>
+window.onload = () => {
+  const main = document.querySelector('main');
+  // let video = document.createElement('video');
+  let video = document.querySelector('video');
+  let imagen = document.querySelector('img.bg');
+  // console.log(main);
+  video.src = 'assets/RUDO_EDIT_20_seg.mp4';
+  video.setAttribute('autoplay',true);
+  video.setAttribute('loop',true);
+  video.setAttribute('mute',true);
+  video.classList.add('bg');
+  main.appendChild(video);
+  imagen.style = 'transition:.3s;opacity:0';
+  video.play();
+}
 </script>
 </html>

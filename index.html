@@ -68,6 +68,20 @@
     console.log('Play!');
     imagen.style = 'transition:.3s;opacity:0';
   }
+  console.log(video.buffered);
+  video.addEventListener('canplaythrough', () => {
+    console.log('can play throug');
+    video.play();
+    
+  })
+  
+  setTimeout(() => {
+    if (video.src && video.paused) {
+      console.log('Fuerza!');
+      
+      video.play()
+    }
+  }, 6000);
   // window.onload = () => {
   //   video.play();
   // }

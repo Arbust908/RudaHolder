@@ -27,21 +27,49 @@
   </main>
 </body>
 <script defer>
-window.onload = () => {
+  Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+    get: function(){
+      return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+    }
+  })
   const main = document.querySelector('main');
-  let fuente = document.createElement('source');
   let video = document.querySelector('video');
   let imagen = document.querySelector('img.bg');
-  // console.log(main);
-  fuente.src = './assets/RUDO_EDIT_20_seg.mp4';
-  fuente.type = 'video/mp4';
-  video.setAttribute('autoplay',true);
+  console.log('Creado');
   video.setAttribute('loop',true);
   video.setAttribute('mute',true);
   video.classList.add('bg');
-  video.appendChild(fuente);
   main.appendChild(video);
-  imagen.style = 'transition:.3s;opacity:0';
-}
+  console.log('Metido!');
+  var req = new XMLHttpRequest();
+  req.open('GET', '/assets/RUDO_EDIT_20_seg.mp4', true);
+  req.responseType = 'blob';
+
+  req.onload = function() {
+    // Onload is triggered even on 404
+    // so we need to check the status code
+    if (this.status === 200) {
+      var videoBlob = this.response;
+      var vid = URL.createObjectURL(videoBlob); // IE10+
+      // Video is now downloaded
+      // and we can set it as source on the video element
+      video.src = vid;
+      video.setAttribute('autoplay',true);
+      console.log('Sorce!!!');
+    }
+  }
+  req.onerror = function() {
+    console.log('EROR');
+  }
+
+  req.send();
+  imagen.style = 'transition:.3s;opacity:0.8;background-color:red;';
+  video.onplay = function() {
+    console.log('Play!');
+    imagen.style = 'transition:.3s;opacity:0';
+  }
+  // window.onload = () => {
+  //   video.play();
+  // }
 </script>
 </html>

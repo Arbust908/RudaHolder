@@ -77,7 +77,7 @@ main>.bg{
   margin: 0;
   transition: .3s;
 }
-@media screen and (min-width: 760px){ /* TABLET */
+@media screen and (min-width: 760px){
   .social-btn{
     text-decoration: none;
   }
@@ -99,7 +99,7 @@ main>.bg{
   height: auto;
   width: 40px 
 }
-@media screen and (min-width: 760px){ /* TABLET */
+@media screen and (min-width: 760px){
   .contact{
     position: absolute;
     bottom: 5%;
@@ -122,7 +122,7 @@ main>.bg{
   height: auto;
   width: 80px 
 }
-@media screen and (min-width: 760px){ /* TABLET */
+@media screen and (min-width: 760px){
   .coming{
     position: absolute;
     bottom: 5%;
@@ -131,7 +131,6 @@ main>.bg{
     top: unset;
   }
   .coming>img{
-    /* height: 100%; */
     width: 100px 
   }
 }

@@ -21,51 +21,14 @@
   <a class="contact"><img src="./assets/SVG/ContactoRudo.svg" alt="Kanji de Contacto"></a>
   </main>
 </body>
-<!-- <script defer>
-  Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
-    get: function(){
-      return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
-    }
-  })
-  const main = document.querySelector('main');
-  let video = document.querySelector('video');
-  let imagen = document.querySelector('img.bg');
-  // console.log('Creado');
-  video.setAttribute('loop',true);
-  video.setAttribute('mute',true);
-  video.classList.add('bg');
-  main.appendChild(video);
-  // console.log('Metido!');
-  var req = new XMLHttpRequest();
-  req.open('GET', '/assets/RUDO_EDIT_20_seg.mp4', true);
-  req.responseType = 'blob';
-
-  req.onload = function() {
-    if (this.status === 200) {
-      var videoBlob = this.response;
-      var vid = URL.createObjectURL(videoBlob);
-      video.src = vid;
-      // console.log('Sorce!!!');
+<script>
+  window.onresize = () => {
+    let NWC = document.querySelector('.coming>img');
+    if (window.innerWidth >= 768) {
+      NWC.src = './assets/SVG/NewWebRudo.svg';
+    } else {
+      NWC.src = './assets/SVG/NewWebRudo__Mobile.svg';
     }
   }
-  req.onerror = function() {
-    // console.log('EROR');
-  }
-  req.send();
-  video.onplay = function() {
-    // console.log('Play!');
-    imagen.style = 'transition:.3s;opacity:0';
-  }
-  // console.log(video.buffered);
-  video.addEventListener('canplaythrough', () => {
-    // console.log('can play throug');
-    video.play();
-  })
-  setTimeout(() => {
-    let movie = document.querySelector('video');
-    if(movie){
-      movie.setAttribute('autoplay',true);
-    }
-  }, 6000);
-</script> -->
+</script>
 </html>

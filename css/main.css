@@ -3,46 +3,40 @@
   src:  url('../assets/font/Rudo-Bold.otf');
   font-weight: bold;
 }
+@font-face {
+  font-family: 'KanjiFont';
+  src:  url('../assets/font/logotypejp_mp_m_1.ttf');
+  font-weight: normal;
+}
 :root{
   --color-main: #fffc92;
 }
 body{
   margin: 0;
-  background-color: #141414;
+  background-color: #00938b;
 }
 main{
   color: var(--color-main);
-  font-family: 'RudoFont' , sans-serif;
-  /* Aca se lo saco... estaba al pedo position: absolute; */
+  font-family: 'KanjiFont' , sans-serif;
   width: 100%;
   height: 100vh;
-  /* Display flex es la nueva mecca. */
-  /* Tiene comportamiento estandar raro pero nos permite un posisionamiento muy facil y bueno con pocas lineas. Y no mas positions y margenes raros y eso :D */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Esto centra en el eje horizontal */
-  align-items: center;     /* Esto en el eje vertical */
+  justify-content: center;
+  align-items: center;
 }
-/* Haciendo el .bg hijo directo del main lo podemos hacer del mismo tamaño */
 main>.bg{
   width: inherit;
   height: inherit;
   object-fit: cover;
-  /* Si le metemos el z-index asi nos aseguramos que quede de fondo */
   z-index: -1;
-  /* Al ponerle position: absolute nos aseguramos que queda todo el resto arriba sin mucho quilombo */
   position: absolute;
 }
 
-/* El logo queda centrado siempre gracias al diplay flex. Dios nos quiere */
 .logo{
   width: 80%;
-  /* Aca hago 2 cosas.
-  1_ pongo un ancho en % asi se va resizeando con los distintos dispositivos.
-  2_ al ponerle un max-width se va a quedar cuando el 80%  sea mas gande. De esa manera en una tele 4k el logo no toma mucho espacio*/
   max-width: 400px;
 }
-/* Cambio los # por . asi se adapta a que usamos classes para dar estilo */
 .links {
   display: flex;
   justify-content: space-between;
@@ -50,13 +44,9 @@ main>.bg{
   width: 80%;
   align-items: flex-start;
   height: 74px;
-  /* Que el elemento padre de los iconos sea position absolute nos va a hacer que el Flex no lo joda y nos aseguramos que siempre este en donde queremos */
   position: absolute;
-  /* Pancho Tip: si usamos el numero 0 no hace falta ponerle unidad :D */
   bottom: 0;
   right: 0;
-  /* Float en un mundo con Flex es medio mala palabra. Si sirve para poner imagenes y textos una al lado del otro u otras cosas asi. Para posisionar no mas, Gracias! */
-  /* float:right; */
 }
 .links:hover>.social-btn:not(:hover){
   opacity: .5;
@@ -86,41 +76,26 @@ main>.bg{
   color: var(--color-main);
   margin: 0;
   transition: .3s;
-  height: 0;
+  /* height: 0; */
 }
 @media screen and (min-width: 760px){ /* TABLET */
-  .social-btn>h2{
-    display: block;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+  .social-btn{
     text-decoration: none;
   }
-  .social-btn:hover>h2.ig,
-  .social-btn:hover>h2.fb{
-    height: 54px;
-  }
-  .social-btn:hover>h2.vimeo{
-    height: 135px;
-  }
-  .social-btn:hover>h2.behance{
-    height: 189px;
+  .social-btn>img.kanji{
+    display: block;
+    max-width: 32px;
+    padding: 8px;
+    width: 16px;
   }
 }
-.check{
-  display: flex;
+.check,
+.coming{
+  display: block;
+  position: absolute;
 }
 @media screen and (min-width: 760px){ /* TABLET */
   .check{
     display: block;
   }
 }
-
-.dot{
-  background-color: aquamarine;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  z-index: -1;
-}
-
-/* fffc92 Amarillo */

@@ -9,24 +9,19 @@
 </head>
 <body>
   <main>
-<!-- No vamos a usar id para dar estilos. Sino class -->
-
-  <img src='assets/rudo_placeholder.jpg' alt="" class="bg">
+  <!-- <img src='assets/rudo_placeholder.jpg' alt="" class="bg"> -->
   <img src="assets/svgs/Ra_Logo_Rudo.svg" alt="" class="logo">
   <div class="links">
-    <!-- Acomodo los alt y class asi quedan en fila... becuase OCD -->
-    <!-- Vamos a usar svgs por que cargan mas rapido por ser vectores -->
-    <a href="https://www.instagram.com/rudo.co/" class="social-btn" ><img src="assets/svgs/Ra_Instagram.svg" alt="logo de red social" class="snl"><h2 class="ig">IG</h2></a>
-    <a href="https://www.facebook.com/rudocompany/" class="social-btn" ><img src="assets/svgs/Ra_Facebook.svg"  alt="logo de red social" class="snl"><h2 class="fb">FB</h2></a>
-    <a href="https://vimeo.com/rudoco" class="social-btn" ><img src="assets/svgs/Ra_Vimeo.svg"     alt="logo de red social" class="snl"><h2 class="vimeo">Vimeo</h2></a>
-    <a href="https://www.behance.net/rudocompany" class="social-btn" ><img src="assets/svgs/Ra_Behance.svg"   alt="logo de red social" class="snl"><h2 class="behance">Behance</h2></a>
+    <a href="https://www.instagram.com/rudo.co/" class="social-btn" ><img src="assets/svgs/Ra_Instagram.svg" alt="logo de red social" class="snl"><img src='./assets/SVG/InstagramRudo.svg' class="ig kanji"></a>
+    <a href="https://www.facebook.com/rudocompany/" class="social-btn" ><img src="assets/svgs/Ra_Facebook.svg"  alt="logo de red social" class="snl"><img src='./assets/SVG/FacebookRudo.svg' class="fb kanji"></a>
+    <a href="https://vimeo.com/rudoco" class="social-btn" ><img src="assets/svgs/Ra_Vimeo.svg"     alt="logo de red social" class="snl"><img src='./assets/SVG/VimeoRudo.svg' class="vimeo kanji"></a>
+    <a href="https://www.behance.net/rudocompany" class="social-btn" ><img src="assets/svgs/Ra_Behance.svg"   alt="logo de red social" class="snl"><img src='./assets/SVG/BehanceRudo.svg' class="behance kanji"></a>
   </div>
-  <h2 class="coming">New web is coming</h2>
-  <h2 class="check">Check it</h2>
-  <video></video>
+  <h2 class="coming"><img src="./assets/SVG/NewWebRudo.svg" alt="Kanji de Nueva Web en camino"></h2>
+  <h2 class="contact"><img src="./assets/SVG/ContactoRudo.svg" alt="Kanji de Contacto"></h2>
   </main>
 </body>
-<script defer>
+<!-- <script defer>
   Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
     get: function(){
       return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
@@ -35,50 +30,42 @@
   const main = document.querySelector('main');
   let video = document.querySelector('video');
   let imagen = document.querySelector('img.bg');
-  console.log('Creado');
+  // console.log('Creado');
   video.setAttribute('loop',true);
   video.setAttribute('mute',true);
   video.classList.add('bg');
   main.appendChild(video);
-  console.log('Metido!');
+  // console.log('Metido!');
   var req = new XMLHttpRequest();
   req.open('GET', '/assets/RUDO_EDIT_20_seg.mp4', true);
   req.responseType = 'blob';
 
   req.onload = function() {
-    // Onload is triggered even on 404
-    // so we need to check the status code
     if (this.status === 200) {
       var videoBlob = this.response;
-      var vid = URL.createObjectURL(videoBlob); // IE10+
-      // Video is now downloaded
-      // and we can set it as source on the video element
+      var vid = URL.createObjectURL(videoBlob);
       video.src = vid;
-      console.log('Sorce!!!');
+      // console.log('Sorce!!!');
     }
   }
   req.onerror = function() {
-    console.log('EROR');
+    // console.log('EROR');
   }
-
   req.send();
   video.onplay = function() {
-    console.log('Play!');
+    // console.log('Play!');
     imagen.style = 'transition:.3s;opacity:0';
   }
-  console.log(video.buffered);
+  // console.log(video.buffered);
   video.addEventListener('canplaythrough', () => {
-    console.log('can play throug');
+    // console.log('can play throug');
     video.play();
-    
   })
-  
   setTimeout(() => {
     let movie = document.querySelector('video');
     if(movie){
       movie.setAttribute('autoplay',true);
-      //movie.play()
     }
   }, 6000);
-</script>
+</script> -->
 </html>

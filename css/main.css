@@ -71,12 +71,11 @@ main>.bg{
   width: 32px;
   height: 32px;
 }
-.social-btn>h2{
+.social-btn>.kanji{
   display: none;
   color: var(--color-main);
   margin: 0;
   transition: .3s;
-  /* height: 0; */
 }
 @media screen and (min-width: 760px){ /* TABLET */
   .social-btn{
@@ -89,31 +88,50 @@ main>.bg{
     width: 16px;
   }
 }
-.check,
-.coming{
-  display: block;
+.contact{
+  margin: 0;
+  display: flex;
   position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.contact>img{
+  height: auto;
+  width: 40px 
 }
 @media screen and (min-width: 760px){ /* TABLET */
   .contact{
     position: absolute;
     bottom: 5%;
     right: 5%;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: 150%;
+    align-items: flex-end;
+    top: unset;
+  }
+  .contact>img{
+    width: 50px 
   }
 }
 .coming{
+  margin: 0;
   display: flex;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.coming>img{
+  height: auto;
+  width: 80px 
 }
 @media screen and (min-width: 760px){ /* TABLET */
   .coming{
     position: absolute;
     bottom: 5%;
     left: 5%;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: 150%;
+    align-items: flex-end;
+    top: unset;
+  }
+  .coming>img{
+    /* height: 100%; */
+    width: 100px 
   }
 }

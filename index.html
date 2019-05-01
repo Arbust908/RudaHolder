@@ -21,14 +21,12 @@
   <a class="contact"><img src="./assets/SVG/ContactoRudo.svg" alt="Kanji de Contacto"></a>
   </main>
 </body>
+<script src="./js/resizeImg.js"></script>
 <script>
-  window.onresize = () => {
-    let NWC = document.querySelector('.coming>img');
-    if (window.innerWidth >= 768) {
-      NWC.src = './assets/SVG/NewWebRudo.svg';
-    } else {
-      NWC.src = './assets/SVG/NewWebRudo__Mobile.svg';
-    }
-  }
+    reSizeImg('.coming>img','./assets/SVG/NewWebRudo__Mobile.svg','./assets/SVG/NewWebRudo.svg',768,true);
+window.onresize = () => {
+  reSizeImg('.coming>img','./assets/SVG/NewWebRudo__Mobile.svg','./assets/SVG/NewWebRudo.svg');
+}
 </script>
+<script src="./js/fullScreenator.js" onload="fullScreenator('main',true)"></script>
 </html>

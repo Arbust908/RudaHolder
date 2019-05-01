@@ -106,15 +106,32 @@ main>.bg{
     height: 189px;
   }
 }
-.check{
+.contact{
   display: flex;
 }
 @media screen and (min-width: 760px){ /* TABLET */
-  .check{
-    display: block;
+  .contact{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 150%;
   }
 }
-
+.coming{
+  display: flex;
+}
+@media screen and (min-width: 760px){ /* TABLET */
+  .coming{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 150%;
+  }
+}
 .dot{
   background-color: aquamarine;
   width: 50px;

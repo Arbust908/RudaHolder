@@ -54,7 +54,6 @@
       // Video is now downloaded
       // and we can set it as source on the video element
       video.src = vid;
-      video.setAttribute('autoplay',true);
       console.log('Sorce!!!');
     }
   }
@@ -75,14 +74,11 @@
   })
   
   setTimeout(() => {
-    if (video.src && video.paused) {
-      console.log('Fuerza!');
-      
-      video.play()
+    let movie = document.querySelector('video');
+    if(movie){
+      movie.setAttribute('autoplay',true);
+      //movie.play()
     }
   }, 6000);
-  // window.onload = () => {
-  //   video.play();
-  // }
 </script>
 </html>

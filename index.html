@@ -23,10 +23,15 @@
 </body>
 <script src="./js/resizeImg.js"></script>
 <script>
-    reSizeImg('.coming>img','./assets/SVG/NewWebRudo__Mobile.svg','./assets/SVG/NewWebRudo.svg',768,true);
+  //let reSrc = reSizeImg('.coming>img','./assets/SVG/NewWebRudo__Mobile.svg','./assets/SVG/NewWebRudo.svg',768,true);
+  //reSrc;
+  reSizeImg('.coming>img','./assets/SVG/NewWebRudo__Mobile.svg','./assets/SVG/NewWebRudo.svg',768,true);
 window.onresize = () => {
-  reSizeImg('.coming>img','./assets/SVG/NewWebRudo__Mobile.svg','./assets/SVG/NewWebRudo.svg');
+  console.log('reSize!');
+  //reSrc;
+  fullScreenator('main',true);
+  reSizeImg('.coming>img','./assets/SVG/NewWebRudo__Mobile.svg','./assets/SVG/NewWebRudo.svg',768,true);
 }
 </script>
-<script src="./js/fullScreenator.js" onload="fullScreenator('main',true)"></script>
+<script src="./js/fullScreenator.js"></script>
 </html>

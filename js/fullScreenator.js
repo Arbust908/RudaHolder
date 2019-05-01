@@ -18,9 +18,7 @@ function fullScreenator(selecThor, debug = false)
   const DEBUG = debug;
   let box = document.querySelector(selecThor);
   DEBUG ? console.log(box) : '';
-  window.onresize = () => {
-    DEBUG ? console.log(innerHeight) : '';
-    box.style.hight = window.innerHeight;
-    DEBUG ? console.log(box.style.hight) : '';
-  }
+  DEBUG ? console.log(innerHeight) : '';
+  box.style.hight = window.innerHeight;
+  DEBUG ? console.log(box.style.hight) : '';
 }

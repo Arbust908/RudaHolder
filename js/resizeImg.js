@@ -20,12 +20,14 @@ function reSizeImg(selecThor, src1, src2, size = 768, debug = false)
 {
   const DEBUG = debug;
   let node = document.querySelector(selecThor);
-  DEBUG ? console.log(node) : '';
+  DEBUG ? console.log('Selector',node) : '';
   if (window.innerWidth <= size) {
     node.src = src1;
-    DEBUG ? console.log(node) : '';
+    DEBUG ? console.log('Fuente Chica',src1) : '';
+    DEBUG ? console.log(node.src) : '';
   } else {
     node.src = src2;
-    DEBUG ? console.log(node) : '';
+    DEBUG ? console.log('Fuente Grande',src2) : '';
+    DEBUG ? console.log(node.src) : '';
   }
 }

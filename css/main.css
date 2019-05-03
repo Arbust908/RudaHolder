@@ -48,9 +48,6 @@ main>.bg{
   bottom: 0;
   right: 0;
 }
-.links:hover>.social-btn:not(:hover){
-  opacity: .5;
-}
 @media screen and (min-width: 760px){
   .links{
     margin: 20px;
@@ -66,6 +63,7 @@ main>.bg{
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: .6s
 }
 .snl {
   width: 32px;
@@ -76,6 +74,12 @@ main>.bg{
   color: var(--color-main);
   margin: 0;
   transition: .3s;
+}
+.social-btn:hover{
+  border: 1px solid #FF9A96;
+}
+.social-btn:hover>.kanji{
+  color: #FF9A96;
 }
 @media screen and (min-width: 760px){
   .social-btn{

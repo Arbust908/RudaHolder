@@ -8,12 +8,15 @@
   src:  url('../assets/font/logotypejp_mp_m_1.ttf');
   font-weight: normal;
 }
+[hidden]{
+  display: none;
+}
 :root{
   --color-main: #fffc92;
 }
 body{
   margin: 0;
-  background-color: #00938b;
+  background-color: 131113;
 }
 main{
   color: var(--color-main);
@@ -36,6 +39,7 @@ main>.bg{
 .logo{
   width: 80%;
   max-width: 400px;
+  fill: var(--color-main);
 }
 .links {
   display: flex;
@@ -58,38 +62,43 @@ main>.bg{
 }
 
 .social-btn{
-  border: 1px solid #fffc92;
-  margin: 20px 8px;
+  margin: 0 8px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: .6s
 }
+.social-btn:first-of-type{
+  margin-left: 0;
+}
+.social-btn:last-of-type{
+  margin-right: 0;
+}
 .snl {
   width: 32px;
   height: 32px;
 }
-.social-btn>.kanji{
-  display: none;
-  color: var(--color-main);
+.kanji{
+  fill: var(--color-main);
   margin: 0;
   transition: .3s;
+  max-width: 32px;
+  width: 32px;
 }
-.social-btn:hover{
-  border: 1px solid #FF9A96;
+.kanji:hover{
+  fill: #FF9A96;
 }
-.social-btn:hover>.kanji{
-  color: #FF9A96;
+.kanji>.borde,
+.kanji>.texto{
+  display: none;
 }
 @media screen and (min-width: 760px){
   .social-btn{
     text-decoration: none;
   }
-  .social-btn>img.kanji{
+  .kanji>.borde,
+  .kanji>.texto{
     display: block;
-    max-width: 32px;
-    padding: 8px;
-    width: 16px;
   }
 }
 
@@ -117,28 +126,34 @@ main>.bg{
 .contact{
   right: 12px;
 }
-.contact>img{
-  width: 40px 
+.contact>svg{
+  width: 40px;
+  fill: var(--color-main);
+  transition: .6s;
+}
+.contact:hover .sobre{
+  fill: #FF9A96;
+  /* transform: scale(1.2) translate(-10%, -4%) */
 }
 @media screen and (min-width: 760px){
   .contact{
     right: 20px;
   }
-  .contact>img{
-    width: 50px 
+  .contact>svg{
+    width: 50px;
   }
 }
 .coming{
   left: 12px;
 }
 .coming>img{
-  width: 80px 
+  width: 80px;
 }
 @media screen and (min-width: 760px){
   .coming{
     left: 20px;
   }
   .coming>img{
-    width: 100px 
+    width: 100px;
   }
 }

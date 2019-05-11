@@ -1,0 +1,14 @@
+$display-wide: $biggest
+$display-narrow: $smallest
+
+@mixin fluid($property, $minValue, $maxValue)
+  $x: ($maxValue - $minValue)/($display-wide - $display-narrow)
+  $y: $maxValue - $display-wide * $x
+  #{$property}: calc(#{100*$x}vw + #{$y}px)
+
+// h1
+//   @include fluid('font-size',48,80)
+// 
+// .container
+//   @include fluid('width',315,1580)
+// @include fluid('padding',30,60)

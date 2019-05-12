@@ -11,27 +11,12 @@ html {
 
 body {
   margin: 0;
-  background-color: 131113;
+  background-color: #1a191a;
 }
 
 main {
-  color: var(--color-main);
-  font-family: 'KanjiFont' , sans-serif;
   width: 100%;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 main > .bg {
@@ -41,6 +26,29 @@ main > .bg {
      object-fit: cover;
   z-index: -1;
   position: absolute;
+}
+
+.main-frame {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: calc(4.4375vw + 11.5px);
+  width: 100%;
+  height: 100%;
+}
+
+.case {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .logo {
@@ -55,28 +63,34 @@ main > .bg {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 10%;
-  width: 80%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  height: 74px;
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 769px) {
   .links {
-    margin: 20px;
     width: auto;
     top: 0;
-    bottom: 0;
+    right: 0;
+    bottom: unset;
+    left: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
 .social-btn {
-  margin: 0 12px;
+  margin-top: 7.8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,22 +101,28 @@ main > .bg {
   overflow: hidden;
   -webkit-transition: .6s;
   transition: .6s;
+  width: calc(1.1875vw + 22.2px);
+  height: 100%;
 }
 
-.social-btn:first-of-type {
-  margin-left: 0;
-}
-
-.social-btn:last-of-type {
-  margin-right: 0;
+@media screen and (min-width: 769px) {
+  .social-btn {
+    margin: 0 12px;
+  }
+  .social-btn:first-of-type {
+    margin-left: 0;
+  }
+  .social-btn:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .kanji {
   fill: var(--color-main);
   margin: 0;
+  width: inherit;
   -webkit-transition: .3s;
   transition: .3s;
-  width: calc(1.1875vw + 22.2px);
 }
 
 .kanji:hover {
@@ -114,7 +134,7 @@ main > .bg {
   display: none;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 769px) {
   .kanji > .borde,
   .kanji > .texto {
     display: block;
@@ -128,65 +148,41 @@ main > .bg {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  top: 12px;
-}
-
-.contact > img,
-.coming > img {
-  height: auto;
-}
-
-@media screen and (min-width: 760px) {
-  .contact,
-  .coming {
-    position: absolute;
-    bottom: 20px;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    top: unset;
-  }
 }
 
 .contact {
-  right: 12px;
+  bottom: 0;
+  right: 0;
 }
 
 .contact > svg {
-  width: 40px;
+  height: 100%;
+  width: calc(1.6125vw + 25.24px);
   fill: var(--color-main);
   -webkit-transition: .6s;
   transition: .6s;
 }
 
 .contact:hover .sobre {
+  -webkit-transition: .6s;
+  transition: .6s;
   fill: #FF9A96;
-  /* transform: scale(1.2) translate(-10%, -4%) */
-}
-
-@media screen and (min-width: 760px) {
-  .contact {
-    right: 20px;
-  }
-  .contact > svg {
-    width: 50px;
-  }
 }
 
 .coming {
-  left: 12px;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .coming {
+    bottom: 0;
+    top: unset;
+  }
 }
 
 .coming > img {
-  width: 80px;
-}
-
-@media screen and (min-width: 760px) {
-  .coming {
-    left: 20px;
-  }
-  .coming > img {
-    width: 100px;
-  }
+  height: 100%;
+  width: calc(5.8625vw + 51.74px);
 }
 /*# sourceMappingURL=app.css.map */

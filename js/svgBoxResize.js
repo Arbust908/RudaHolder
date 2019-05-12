@@ -10,14 +10,14 @@ function svgBoxResize(selecThor, small = null, big = null, breakpoint = 768, deb
 {
   const DEBUG = debug;
   let ele = selecThor;
-  console.log(DEBUG ? ele : '');
+  DEBUG ? console.log(ele) : '';
   let vBox = ele.dataset.vbox;
-  console.log(DEBUG ? vBox : '');
+  DEBUG ? console.log(vBox) : '';
   vBox = vBox.split(' ');
   DEBUG ? console.log(vBox) : '';
   small =  small == null ? vBox[3] : small;
   big   =  big == null ? vBox[3] : big;
-  if (window.innerWidth < breakpoint) {
+  if (window.innerWidth <= breakpoint) {
     vBox[3] = small;
     DEBUG ? console.log('small '+ vBox[3]) : '';
   } else {

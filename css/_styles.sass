@@ -1,23 +1,26 @@
 body
   margin: 0
-  background-color: 131113
+  background-color: #1a191a
 
 main
-  color: var(--color-main)
-  font-family: 'KanjiFont' , sans-serif
   width: 100%
   height: 100vh
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
   &>.bg
     width: inherit
     height: inherit
     object-fit: cover
     z-index: -1
     position: absolute
-
+.main-frame
+  box-sizing: border-box
+  +fluid('padding', 25.7, 96.7)
+  width: 100%
+  height: 100%
+.case
+  width: 100%
+  height: 100%
+  position: relative
+  +flexCenter
 
 .logo
   +fluid('width', 183.9, 431.6)
@@ -26,45 +29,46 @@ main
 .links 
   display: flex
   justify-content: space-between
-  margin: 0 10%
-  width: 80%
+  flex-direction: column
   align-items: flex-start
-  height: 74px
   position: absolute
   bottom: 0
-  right: 0
-
-@media screen and (min-width: 760px)
-  .links
-    margin: 20px
+  left: 0
+  @media screen and (min-width: 769px)
     width: auto
     top: 0
-    bottom: 0
-  
+    right: 0
+    bottom: unset
+    left: unset
+    flex-direction: row
 
 
 .social-btn
-  margin: 0 12px
+  margin-top: 7.8px
   display: flex
   flex-direction: column
   overflow: hidden
   transition: .6s
-  &:first-of-type
-    margin-left: 0
-  &:last-of-type
-    margin-right: 0
+  +fluid('width', 26, 45)
+  height: 100%
+  @media screen and (min-width: 769px)
+    margin: 0 12px
+    &:first-of-type
+      margin-left: 0
+    &:last-of-type
+      margin-right: 0
 
 .kanji
   fill: var(--color-main)
   margin: 0
+  width: inherit
   transition: .3s
-  +fluid('width', 26, 45)
   &:hover
     fill: #FF9A96
   &>.borde,
   &>.texto
     display: none
-    @media screen and (min-width: 760px)
+    @media screen and (min-width: 769px)
       display: block
 
 .contact,
@@ -72,52 +76,24 @@ main
   margin: 0
   display: flex
   position: absolute
-  top: 12px
-
-.contact>img,
-.coming>img
-  height: auto
-
-@media screen and (min-width: 760px)
-  .contact,
-  .coming
-    position: absolute
-    bottom: 20px
-    align-items: flex-end
-    top: unset
-  
-
-
 .contact
-  right: 12px
-
-.contact>svg
-  width: 40px
-  fill: var(--color-main)
-  transition: .6s
-
-.contact:hover .sobre
-  fill: #FF9A96
-  /* transform: scale(1.2) translate(-10%, -4%) */
-
-@media screen and (min-width: 760px)
-  .contact
-    right: 20px
-  
-  .contact>svg
-    width: 50px
-  
-
+  bottom: 0
+  right: 0
+  &>svg
+    height: 100%
+    +fluid('width', 30.4, 56.2)
+    fill: var(--color-main)
+    transition: .6s
+  &:hover
+    & .sobre
+      transition: .6s
+      fill: #FF9A96
 .coming
-  left: 12px
-
-.coming>img
-  width: 80px
-
-@media screen and (min-width: 760px)
-  .coming
-    left: 20px
-  
-  .coming>img
-    width: 100px
-  
+  top: 0
+  left: 0
+  @media screen and (min-width: 769px)
+    bottom: 0
+    top: unset
+  &>img
+    height: 100%
+    +fluid('width', 70.5, 164.3)

@@ -6,9 +6,7 @@ $display-narrow: $smallest
   $y: $maxValue - $display-wide * $x
   #{$property}: calc(#{100*$x}vw + #{$y}px)
 
-// h1
-//   @include fluid('font-size',48,80)
-// 
-// .container
-//   @include fluid('width',315,1580)
-// @include fluid('padding',30,60)
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center

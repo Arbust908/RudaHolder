@@ -10,7 +10,7 @@
 </head>
 <body>
   <main>
-    <img src='assets/RUDO_small.gif' alt="" class="bg">
+    <img src='assets/RUDO_small.gif' style="opacity: .5" alt="" class="bg">
     <video src="./assets/RUDO_small.mp4" muted loop autoplay class="bg"></video>
     <article class="main-frame">
       <article class="case">
@@ -295,11 +295,13 @@
   const VIDEO = MAIN.querySelector('video.bg');
   const IMG   = MAIN.querySelector('img.bg');
   VIDEO.onplay = function() {
-    console.log('Play!');
-    IMG.style = 'transition:.3s;opacity:0';
-    setTimeout(() => {
-      MAIN.removeChild(IMG);
-    }, 350);
+    setTimeout( () => {
+      console.log('Play!');
+      IMG.style = 'transition:.3s;opacity:0';
+      setTimeout(() => {
+        MAIN.removeChild(IMG);
+      }, 350);
+    }, 8000)
   }
 
 </script>

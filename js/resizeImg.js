@@ -18,7 +18,7 @@
  */
 function reSizeImg(selecThor, src1, src2, size = 768, debug = false)
 {
-  const DEBUG = true;
+  const DEBUG = debug;
   let node = document.querySelector(selecThor);
   DEBUG ? console.log('Selector',node) : '';
   if (window.innerWidth <= size) {

@@ -10,7 +10,7 @@
 </head>
 <body>
   <main>
-    <img src='assets/rudo_placeholder.jpg' alt="" class="bg">
+    <!-- <img src='assets/RUDO_small.gif' alt="" class="bg"> -->
     <video src="./assets/RUDO_small.mp4" muted loop autoplay class="bg"></video>
     <article class="main-frame">
       <article class="case">
@@ -281,7 +281,6 @@
     svgBoxResize(red, 45, null, 768);
   });
   window.onresize = () => {
-    //console.log('reSize!');
     fullScreenator('main');
     reSizeImg('.coming>img','./assets/SVG/NewWebRudo__Mobile.svg','./assets/SVG/NewWebRudo.svg');
     redes.forEach( (red) => {
@@ -290,16 +289,19 @@
   }
 </script>
 <script src="./js/fullScreenator.js"></script>
+
 <script defer>
   const MAIN  = document.querySelector('main');
   const VIDEO = MAIN.querySelector('video.bg');
   const IMG   = MAIN.querySelector('img.bg');
-  VIDEO.onplay = function() {
-    console.log('Play!');
-    IMG.style = 'transition:.3s;opacity:0';
-    setTimeout(() => {
-      MAIN.removeChild(IMG);
-    }, 350);
+  if ( window.innerWidth > 768 ) {
+    VIDEO.onplay = function() {
+      console.log('Play!');
+      IMG.style = 'transition:.3s;opacity:0';
+      setTimeout(() => {
+        MAIN.removeChild(IMG);
+      }, 350);
+    }
   }
 </script>
 </html>

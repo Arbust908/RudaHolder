@@ -9,8 +9,10 @@
 </head>
 <body>
   <main>
-    <img src='https://gph.is/g/Zx1k57q' alt="" class="bg">
-    <video src="./assets/RUDO_small.mp4" muted loop autoplay class="bg"></video>
+    <video  muted loop autoplay class="bg">
+      <source src="./assets/RUDO_small.mp4" type="video/mp4">
+    </video>
+    <!-- <img  class="bg" src="./assets/rudo_placeholder.jpg" alt="Imagen de Video de Rudo"> -->
     <article class="main-frame">
       <article class="case">
         <svg id="RudoLogo" x="0px" y="0px" viewBox="0 0 431.6 268.8" class="logo">
@@ -289,20 +291,23 @@
 </script>
 <script src="./js/fullScreenator.js"></script>
 
-<script defer>
+<!-- <script>
   const MAIN  = document.querySelector('main');
   const VIDEO = MAIN.querySelector('video.bg');
   const IMG   = MAIN.querySelector('img.bg');
+  setTimeout( () => {
+    console.log('Play!');
+    IMG.style = 'transition:.3s;opacity:0';
+    setTimeout(() => {
+      MAIN.removeChild(IMG);
+      console.log('Retiro la imagen');
+    }, 350);
+    console.log('Pasaron los ocho');
+    
+  }, 8000)
   VIDEO.onplay = function() {
-    setTimeout( () => {
-      console.log('Play!');
-      IMG.style = 'transition:.3s;opacity:0';
-      setTimeout(() => {
-        MAIN.removeChild(IMG);
-        console.log('Retiro la imagen');
-      }, 350);
-    }, 8000)
+    console.log('Arranco');
   }
 
-</script>
+</script> -->
 </html>
